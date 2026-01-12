@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Council | Adversarial Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f8fafc',
+                100: '#f1f5f9',
+                200: '#e2e8f0',
+                500: '#64748b', 
+                600: '#475569',
+                800: '#1e293b',
+                900: '#0f172a',
+              },
+              accent: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                500: '#3b82f6', 
+                600: '#2563eb',
+                700: '#1d4ed8'
+              },
+              danger: {
+                50: '#fef2f2',
+                100: '#fee2e2',
+                500: '#ef4444',
+                600: '#dc2626'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+              'premium': '0 25px 50px -12px rgba(0, 0, 0, 0.08)',
+              'inner-light': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      ::-webkit-scrollbar { width: 4px; height: 4px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+      
+      body { 
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+      
+      @keyframes loading {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      .loading-bar {
+        position: relative;
+        overflow: hidden;
+      }
+      .loading-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: loading 1.5s infinite;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.2/",
+        "react": "https://aistudiocdn.com/react@^19.2.2",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.2/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.33.0",
+        "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.8"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-[#fafafa] text-brand-900 overflow-hidden">
+    <div id="root"></div>
+  </body>
+</html>
